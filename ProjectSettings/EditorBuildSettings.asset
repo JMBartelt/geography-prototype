@@ -47,6 +47,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/StarterSamples/Usage/SceneManager.unity
     guid: d9d629a01189e9744a9347a18243afd9
+  - enabled: 1
+    path: Assets/Scenes/CurioXR_Geography.unity
+    guid: ca1d95726648a254db2be7fbcba7ca31
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8c0030b4b5984e7439a553df0cdd7dd2,
       type: 2}
