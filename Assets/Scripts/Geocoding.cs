@@ -10,9 +10,27 @@ public class Geocoding : MonoBehaviour
 
     [SerializeField] private MapRenderer _mapRenderer;
 
-    public void StartSetMapLocation(string locationName)
+    public void StartSetMapLocation(string voiceCommand)
     {
-        StartCoroutine(SetMapLocation(locationName));
+        if(voiceCommand.ToLower().Contains("zoom")) // handle zoom command if present
+        {
+            // if contains 'in' or 'out' then zoom the map in or out
+            if(voiceCommand.ToLower().Contains("in"))
+            {
+                // use SetMapScene to zoom so it animates nicely
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(_mapRenderer.Center, _mapRenderer.ZoomLevel + 1));
+            }
+            else if(voiceCommand.ToLower().Contains("out"))
+            {
+                // use SetMapScene to zoom so it animates nicely
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(_mapRenderer.Center, _mapRenderer.ZoomLevel - 1));
+            }
+        }
+        else
+        {
+            // otherwise, assume its a location, so set the map location to voice command
+            StartCoroutine(SetMapLocation(voiceCommand));
+        }
     }
 
     private IEnumerator SetMapLocation(string locationName)
