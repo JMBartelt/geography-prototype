@@ -17,13 +17,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.microsoft.maps.unity": {
-      "version": "0.11.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://unity.virtualearth.net/npm/registry"
-    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
