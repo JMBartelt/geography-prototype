@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12885474, g: 0.1611483, b: 0.21816054, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22806,7 +22806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _layerName: MapCopyrightLayer
-  _font: {fileID: 0}
+  _font: {fileID: 12800000, guid: 4c90d3c4d98a33647872e06a6f654f9f, type: 3}
   _textColor: {r: 0, g: 0, b: 0, a: 0.42}
   _mapCopyrightAlignment: 0
 --- !u!114 &1030265939
