@@ -13288,6 +13288,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139899390}
   m_Mesh: {fileID: 4300030, guid: bd0bb729cb6159b4ab21c5f62cad24ee, type: 3}
+--- !u!1 &1144995417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144995419}
+  - component: {fileID: 1144995418}
+  m_Layer: 0
+  m_Name: Geocoder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1144995418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144995417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7920326e8559f024fb2e15ad7cd86942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mapRenderer: {fileID: 2061401007}
+--- !u!4 &1144995419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144995417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148305633
 GameObject:
   m_ObjectHideFlags: 0
@@ -22984,9 +23029,8 @@ GameObject:
   - component: {fileID: 2061401007}
   - component: {fileID: 2061401006}
   - component: {fileID: 2061401005}
-  - component: {fileID: 2061401004}
   - component: {fileID: 2061401003}
-  - component: {fileID: 2061401002}
+  - component: {fileID: 2061401010}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -22994,27 +23038,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &2061401002
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061401001}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.3, z: 1}
-  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &2061401003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23029,22 +23052,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _percentUtilization: 0.3
   _maxCacheSizeInBytes: 2147483648
---- !u!114 &2061401004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061401001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c7d1b323594a144ac9b98fd93e0f7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layerName: MapCopyrightLayer
-  _font: {fileID: 0}
-  _textColor: {r: 0, g: 0, b: 0, a: 0.42}
-  _mapCopyrightAlignment: 0
 --- !u!114 &2061401005
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -23095,9 +23102,9 @@ MonoBehaviour:
   _numElevationTileFallbackLods: 2
   _requestTilesAroundView: 1
   _center:
-    _latitude: 0
-    _longitude: 0
-  _zoomLevel: 1
+    _latitude: 34.17
+    _longitude: -1.80000000000001
+  _zoomLevel: 16.6
   _minimumZoomLevel: 1
   _maximumZoomLevel: 20
   _mapTerrainType: 0
@@ -23122,7 +23129,7 @@ MonoBehaviour:
     - {fileID: 2061401005}
   _hideTileLayerComponents: 1
   _mapColliderType: 1
-  _mapCollider: {fileID: 2061401002}
+  _mapCollider: {fileID: 2061401010}
 --- !u!114 &2061401008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23158,6 +23165,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2061401010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061401001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.3, z: 1}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1 &2076025715
 GameObject:
   m_ObjectHideFlags: 0
