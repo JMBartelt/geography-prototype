@@ -17,13 +17,46 @@ public class Geocoding : MonoBehaviour
             // if contains 'in' or 'out' then zoom the map in or out
             if(voiceCommand.ToLower().Contains("in"))
             {
+                float zoomLevel = _mapRenderer.ZoomLevel + 1;
+                // zoom extra if they say anything like 'zoom in a lot' or 'zoom in a bunch' or 'zoom in a ton' or 'more'
+                if(voiceCommand.ToLower().Contains("lot") || voiceCommand.ToLower().Contains("bunch") || voiceCommand.ToLower().Contains("ton") || voiceCommand.ToLower().Contains("more"))
+                {
+                    zoomLevel += 1.5f;
+                }
                 // use SetMapScene to zoom so it animates nicely
-                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(_mapRenderer.Center, _mapRenderer.ZoomLevel + 1));
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(_mapRenderer.Center, zoomLevel));
             }
             else if(voiceCommand.ToLower().Contains("out"))
             {
+                float zoomLevel = _mapRenderer.ZoomLevel - 1;
+                // zoom extra if they say anything like 'zoom in a lot' or 'zoom in a bunch' or 'zoom in a ton' or 'more'
+                if(voiceCommand.ToLower().Contains("lot") || voiceCommand.ToLower().Contains("bunch") || voiceCommand.ToLower().Contains("ton") || voiceCommand.ToLower().Contains("more"))
+                {
+                    zoomLevel -= 1.5f;
+                }
                 // use SetMapScene to zoom so it animates nicely
-                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(_mapRenderer.Center, _mapRenderer.ZoomLevel - 1));
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(_mapRenderer.Center, zoomLevel));
+            }
+        }
+        else if(voiceCommand.ToLower().Contains("go") || voiceCommand.ToLower().Contains("move") && (voiceCommand.ToLower().Contains("north") || voiceCommand.ToLower().Contains("south") || voiceCommand.ToLower().Contains("east") || voiceCommand.ToLower().Contains("west")))
+        {
+            // if contains 'north' or 'south' or 'east' or 'west' then pan the map in that direction
+            // use SetMapScene to pan so it animates nicely
+            if(voiceCommand.ToLower().Contains("north"))
+            {
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(new Microsoft.Geospatial.LatLon(_mapRenderer.Center.LatitudeInDegrees + 0.01f, _mapRenderer.Center.LongitudeInDegrees), _mapRenderer.ZoomLevel));
+            }
+            else if(voiceCommand.ToLower().Contains("south"))
+            {
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(new Microsoft.Geospatial.LatLon(_mapRenderer.Center.LatitudeInDegrees - 0.01f, _mapRenderer.Center.LongitudeInDegrees), _mapRenderer.ZoomLevel));
+            }
+            else if(voiceCommand.ToLower().Contains("east"))
+            {
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(new Microsoft.Geospatial.LatLon(_mapRenderer.Center.LatitudeInDegrees, _mapRenderer.Center.LongitudeInDegrees + 0.01f), _mapRenderer.ZoomLevel));
+            }
+            else if(voiceCommand.ToLower().Contains("west"))
+            {
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(new Microsoft.Geospatial.LatLon(_mapRenderer.Center.LatitudeInDegrees, _mapRenderer.Center.LongitudeInDegrees - 0.01f), _mapRenderer.ZoomLevel));
             }
         }
         else
@@ -41,7 +74,7 @@ public class Geocoding : MonoBehaviour
             {
                 Debug.Log("Setting map coordinates to: " + Vector2);
                 Microsoft.Geospatial.LatLon newLocation = new Microsoft.Geospatial.LatLon(Vector2.x, Vector2.y);
-                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(newLocation, 15));
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(newLocation, 13f));
             }
             else
             {
