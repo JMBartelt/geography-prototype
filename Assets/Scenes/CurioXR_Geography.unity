@@ -769,6 +769,7 @@ GameObject:
   - component: {fileID: 19722908}
   - component: {fileID: 19722907}
   - component: {fileID: 19722906}
+  - component: {fileID: 19722910}
   m_Layer: 5
   m_Name: Toggle (5)
   m_TagString: Untagged
@@ -910,6 +911,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Rome
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &19722910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19722904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -922,7 +951,9 @@ MonoBehaviour:
           m_StringArgument: Rome
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &20356590
 GameObject:
   m_ObjectHideFlags: 0
@@ -7254,6 +7285,7 @@ GameObject:
   - component: {fileID: 285863840}
   - component: {fileID: 285863839}
   - component: {fileID: 285863838}
+  - component: {fileID: 285863842}
   m_Layer: 5
   m_Name: Toggle (4)
   m_TagString: Untagged
@@ -7395,6 +7427,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Berlin
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &285863842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285863836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -7407,7 +7467,9 @@ MonoBehaviour:
           m_StringArgument: Berlin
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &286638063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3666093704642933930, guid: 9f717ba020826834a98daf42c0d358da,
@@ -13347,6 +13409,7 @@ GameObject:
   - component: {fileID: 575372657}
   - component: {fileID: 575372656}
   - component: {fileID: 575372655}
+  - component: {fileID: 575372659}
   m_Layer: 5
   m_Name: Toggle (3)
   m_TagString: Untagged
@@ -13488,6 +13551,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: London
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &575372659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575372653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -13500,7 +13591,9 @@ MonoBehaviour:
           m_StringArgument: London
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &590633851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1250564880775054, guid: ba81d7ad914d196478713b77b78ab653,
@@ -22952,6 +23045,7 @@ GameObject:
   - component: {fileID: 1052091492}
   - component: {fileID: 1052091491}
   - component: {fileID: 1052091490}
+  - component: {fileID: 1052091494}
   m_Layer: 5
   m_Name: Toggle (8)
   m_TagString: Untagged
@@ -23093,6 +23187,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Gainesville
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 1
+--- !u!114 &1052091494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052091488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -23105,7 +23227,9 @@ MonoBehaviour:
           m_StringArgument: Gainesville
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1052959494
 GameObject:
   m_ObjectHideFlags: 0
@@ -23443,6 +23567,7 @@ GameObject:
   - component: {fileID: 1071508865}
   - component: {fileID: 1071508864}
   - component: {fileID: 1071508863}
+  - component: {fileID: 1071508867}
   m_Layer: 5
   m_Name: Toggle (6)
   m_TagString: Untagged
@@ -23584,6 +23709,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Sydney
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &1071508867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071508861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -23596,7 +23749,9 @@ MonoBehaviour:
           m_StringArgument: Sydney
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1074199165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3666093704642933930, guid: 9f717ba020826834a98daf42c0d358da,
@@ -24311,6 +24466,7 @@ GameObject:
   - component: {fileID: 1105499478}
   - component: {fileID: 1105499477}
   - component: {fileID: 1105499476}
+  - component: {fileID: 1105499480}
   m_Layer: 5
   m_Name: Toggle (7)
   m_TagString: Untagged
@@ -24452,6 +24608,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: San Francisco
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &1105499480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105499474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -24464,7 +24648,9 @@ MonoBehaviour:
           m_StringArgument: San Francisco
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1105787724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24722,6 +24908,7 @@ GameObject:
   - component: {fileID: 1115931770}
   - component: {fileID: 1115931769}
   - component: {fileID: 1115931768}
+  - component: {fileID: 1115931772}
   m_Layer: 5
   m_Name: Toggle (2)
   m_TagString: Untagged
@@ -24863,6 +25050,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: New York
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &1115931772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115931766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -24875,7 +25090,9 @@ MonoBehaviour:
           m_StringArgument: New York
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1119045016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 599975513303440536, guid: ea16c3c8c1688234fa81a4f39339bf1b,
@@ -29147,6 +29364,7 @@ GameObject:
   - component: {fileID: 1364848435}
   - component: {fileID: 1364848434}
   - component: {fileID: 1364848433}
+  - component: {fileID: 1364848437}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -29288,6 +29506,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Los Angeles
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &1364848437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364848431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -29300,7 +29546,9 @@ MonoBehaviour:
           m_StringArgument: Los Angeles
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1365014441
 GameObject:
   m_ObjectHideFlags: 0
@@ -36950,6 +37198,7 @@ GameObject:
   - component: {fileID: 1792159753}
   - component: {fileID: 1792159752}
   - component: {fileID: 1792159751}
+  - component: {fileID: 1792159755}
   m_Layer: 5
   m_Name: Toggle (1)
   m_TagString: Untagged
@@ -37091,6 +37340,34 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 19722910}
+        m_TargetAssemblyTypeName: BoolEventGate, Assembly-CSharp
+        m_MethodName: SetBool
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Denver
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
+--- !u!114 &1792159755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792159749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0a1960efba49e46aa34d407bfd2fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 853794541}
         m_TargetAssemblyTypeName: Geocoding, Assembly-CSharp
         m_MethodName: StartSetMapLocation
@@ -37103,7 +37380,9 @@ MonoBehaviour:
           m_StringArgument: Denver
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  onFalse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1794825729
 GameObject:
   m_ObjectHideFlags: 0
