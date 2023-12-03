@@ -10,6 +10,7 @@ public class Geocoding : MonoBehaviour
     private string apiKey = "2381a5e42d024edd82abe1ca7b2c276a";
     private string baseUrl = "https://api.opencagedata.com/geocode/v1/json?q=";
     [SerializeField] private string startupLocation = "";
+    [SerializeField] private float startupZoomLevel = 16f;
     [SerializeField] private MapRenderer _mapRenderer;
     [SerializeField] private TextMeshProUGUI _commandText;
     [SerializeField] private TextMeshProUGUI _locationText;
@@ -21,7 +22,7 @@ public class Geocoding : MonoBehaviour
     {
         if(!string.IsNullOrEmpty(startupLocation))
         {
-            StartCoroutine(SetMapLocation(startupLocation));
+            StartCoroutine(SetMapLocation(startupLocation, startupZoomLevel));
         }
     }
     public void StartSetMapLocation(string voiceCommand)
@@ -100,6 +101,24 @@ public class Geocoding : MonoBehaviour
         });
     }
 
+    private IEnumerator SetMapLocation(string locationName, float zoomLevel)
+    {
+        yield return GetCoordinates(locationName, (Vector2) =>
+        {
+            if (Vector2 != null)
+            {
+                _locationText.text = locationName;
+                Debug.Log("Setting map coordinates to: " + Vector2);
+                Microsoft.Geospatial.LatLon newLocation = new Microsoft.Geospatial.LatLon(Vector2.x, Vector2.y);
+                _mapRenderer.SetMapScene(new MapSceneOfLocationAndZoomLevel(newLocation, zoomLevel));
+            }
+            else
+            {
+                Debug.LogError("Failed to get coordinates for location: " + locationName);
+            }
+        });
+    }
+
     public IEnumerator GetCoordinates(string locationName, System.Action<Vector2> callback)
     {
         string url = $"{baseUrl}{UnityWebRequest.EscapeURL(locationName)}&key={apiKey}";
@@ -137,35 +156,36 @@ public class Geocoding : MonoBehaviour
         }
     }
 
-    private void DisplayLocationData(OpenCageData data)
+private void DisplayLocationData(OpenCageData data)
+{
+    SetTextOrDisable(formattedAddressText, "Address: ", data.results[0].formatted);
+    SetTextOrDisable(timezoneText, "Timezone: ", data.results[0].annotations?.timezone?.name);
+    SetTextOrDisable(currencyText, "Currency: ", $"{data.results[0].annotations?.currency?.name} ({data.results[0].annotations?.currency?.symbol})");
+
+    // Adding more details
+    SetTextOrDisable(continentText, "Continent: ", data.results[0].components?.continent);
+    SetTextOrDisable(countryText, "Country: ", $"{data.results[0].components?.country} ({data.results[0].components?.country_code.ToUpper()})");
+    SetTextOrDisable(stateText, "State: ", $"{data.results[0].components?.state} ({data.results[0].components?.state_code})");
+    SetTextOrDisable(cityText, "City: ", data.results[0].components?.city);
+    SetTextOrDisable(postcodeText, "Postcode: ", data.results[0].components?.postcode);
+
+    // Additional interesting details
+    SetTextOrDisable(driveOnText, "Drives on the ", $"{data.results[0].annotations?.roadinfo?.drive_on} side of the road");
+}
+
+private void SetTextOrDisable(TextMeshProUGUI textComponent, string prefix, string dataValue)
+{
+    if (!string.IsNullOrEmpty(dataValue) && !string.IsNullOrWhiteSpace(dataValue))
     {
-        SetTextOrDisable(formattedAddressText, $"Address: {data.results[0].formatted}");
-        SetTextOrDisable(timezoneText, $"Timezone: {data.results[0].annotations.timezone.name}");
-        SetTextOrDisable(currencyText, $"Currency: {data.results[0].annotations.currency.name} ({data.results[0].annotations.currency.symbol})");
-
-        // Adding more details
-        SetTextOrDisable(continentText, $"Continent: {data.results[0].components.continent}");
-        SetTextOrDisable(countryText, $"Country: {data.results[0].components.country} ({data.results[0].components.country_code.ToUpper()})");
-        SetTextOrDisable(stateText, $"State: {data.results[0].components.state} ({data.results[0].components.state_code})");
-        SetTextOrDisable(cityText, $"City: {data.results[0].components.city}");
-        SetTextOrDisable(postcodeText, $"Postcode: {data.results[0].components.postcode}");
-
-        // Additional interesting details
-        SetTextOrDisable(driveOnText, $"Drives on the {data.results[0].annotations.roadinfo.drive_on} side of the road");
+        textComponent.text = prefix + dataValue;
+        textComponent.gameObject.SetActive(true);
     }
-
-    private void SetTextOrDisable(TextMeshProUGUI textComponent, string text)
+    else
     {
-        if (!string.IsNullOrEmpty(text) && !string.IsNullOrWhiteSpace(text))
-        {
-            textComponent.text = text;
-            textComponent.gameObject.SetActive(true);
-        }
-        else
-        {
-            textComponent.gameObject.SetActive(false);
-        }
+        textComponent.gameObject.SetActive(false);
     }
+}
+
 
     private void SetCommandText(string text)
     {
