@@ -34,7 +34,7 @@ public class Geocoding : MonoBehaviour
             {
                 float zoomLevel = _mapRenderer.ZoomLevel + 1;
                 // zoom extra if they say anything like 'zoom in a lot' or 'zoom in a bunch' or 'zoom in a ton' or 'more'
-                if(voiceCommand.ToLower().Contains("lot") || voiceCommand.ToLower().Contains("bunch") || voiceCommand.ToLower().Contains("ton") || voiceCommand.ToLower().Contains("more"))
+                if(voiceCommand.ToLower().Contains("way") || voiceCommand.ToLower().Contains("lot") || voiceCommand.ToLower().Contains("bunch") || voiceCommand.ToLower().Contains("ton") || voiceCommand.ToLower().Contains("more"))
                 {
                     zoomLevel += 1.5f;
                 }
@@ -45,7 +45,7 @@ public class Geocoding : MonoBehaviour
             {
                 float zoomLevel = _mapRenderer.ZoomLevel - 1;
                 // zoom extra if they say anything like 'zoom in a lot' or 'zoom in a bunch' or 'zoom in a ton' or 'more'
-                if(voiceCommand.ToLower().Contains("lot") || voiceCommand.ToLower().Contains("bunch") || voiceCommand.ToLower().Contains("ton") || voiceCommand.ToLower().Contains("more"))
+                if(voiceCommand.ToLower().Contains("way") || voiceCommand.ToLower().Contains("lot") || voiceCommand.ToLower().Contains("bunch") || voiceCommand.ToLower().Contains("ton") || voiceCommand.ToLower().Contains("more"))
                 {
                     zoomLevel -= 1.5f;
                 }
