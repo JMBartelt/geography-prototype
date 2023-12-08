@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
   m_Name: Dictation Sample - WitConfiguration
   m_EditorClassIdentifier: 
-  _clientAccessToken: HOKEABS7HPIQVSRSVWRPTTV75TQJ5QBP
+  _clientAccessToken: KTMCHX3KLX44XJERJCFG2VGZZIVKIG5Z
   _appInfo:
     name: Built-in Models
     id: voiceSDK_en
@@ -298,6 +298,7 @@ MonoBehaviour:
       values:
       - id: e5cce196-9948-420c-a9fb-9c2fd201adaf
         value: true
+    versionTags: []
     voices:
     - name: Cael
       locale: en_US
@@ -429,8 +430,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    composer:
-      canvases: []
+  _configData: []
   _configurationId: 5c466a63-d903-4970-90ec-1b8929253e84
   timeoutMS: 10000
   endpointConfiguration:
