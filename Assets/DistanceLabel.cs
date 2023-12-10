@@ -15,6 +15,11 @@ public class DistanceLabel : MonoBehaviour
     {
         textMesh.text = $"{distance:F2}m";
     }
+    // overload of SetText that uses string
+    public void SetText(string text)
+    {
+        textMesh.text = text;
+    }
     public void SetEndpoints(MapPin position1, MapPin position2)
     {
         endpoints.Add(position1);
@@ -22,6 +27,14 @@ public class DistanceLabel : MonoBehaviour
         lineRenderer.SetPosition(0, position1.gameObject.transform.position + Vector3.up * verticalOffset);
         lineRenderer.SetPosition(1, position2.gameObject.transform.position + Vector3.up * verticalOffset);
         active = true;
+    }
+
+    public void SetLineColor(Color color)
+    {
+        lineRenderer.startColor = color;
+        lineRenderer.endColor = color;
+        // change the Unlit material's base color
+        lineRenderer.material.SetColor("_Color", color);
     }
 
     void Update()
